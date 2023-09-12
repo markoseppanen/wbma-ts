@@ -33,3 +33,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+#vscode workspace settings
+.vscode/settings.json
