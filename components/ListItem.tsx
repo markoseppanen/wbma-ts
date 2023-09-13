@@ -1,6 +1,6 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native'
-import { listItemStyle } from '../styles'
-import { MediaFile } from './List'
+import { listItemStyle } from '../styles/mainStyles'
+import { MediaFile } from '../interfaces/Media'
 
 const uploads = 'http://media.mw.metropolia.fi/wbma/uploads'
 
