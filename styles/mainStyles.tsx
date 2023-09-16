@@ -1,15 +1,9 @@
 import { Dimensions, Platform, StyleSheet } from 'react-native'
 import Constants from 'expo-constants'
 
-const HEADER_TEXT_SIZE = 20
+import { COLORS } from './colors'
 
-const COLORS = {
-  background: '#222b36',
-  background2: '#1b2129',
-  foreground: '#d0cfcf',
-  accentColor1: '#b4bdb4',
-  accentColor2: '#ac0035',
-}
+const HEADER_TEXT_SIZE = 20
 
 export const containerStyle = StyleSheet.create({
   container: {
@@ -31,7 +25,8 @@ export const listItemStyle = StyleSheet.create({
     margin: 5,
     backgroundColor: COLORS.background2,
     width: Dimensions.get('window').width - 10,
-    borderRadius: 10,
+    borderRadius: 15,
+    overflow: 'hidden',
   },
   image: {
     flex: 1,

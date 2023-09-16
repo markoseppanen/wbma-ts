@@ -1,16 +1,12 @@
 import { StatusBar } from 'expo-status-bar'
-import { SafeAreaView } from 'react-native'
 
-import { List } from './components/List'
-import { containerStyle } from './styles/mainStyles'
+import { Navigator } from './navigators/Navigator'
 
-const App = () => {
-  return (
-    <SafeAreaView style={containerStyle.container}>
-      <List />
-      <StatusBar style="light" />
-    </SafeAreaView>
-  )
-}
+const App = () => (
+  <>
+    <Navigator />
+    <StatusBar style="auto" />
+  </>
+)
 
 export default App
