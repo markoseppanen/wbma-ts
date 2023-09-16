@@ -29,12 +29,12 @@ const TabScreen = () => (
 )
 
 const StackScreen = () => (
-  <Stack.Navigator
-    screenOptions={{
-      headerShown: false,
-    }}
-  >
-    <Stack.Screen name="Tabs" component={TabScreen} />
+  <Stack.Navigator>
+    <Stack.Screen
+      name="Tabs"
+      component={TabScreen}
+      options={{ headerShown: false }}
+    />
     <Stack.Screen name="Single" component={Single} />
   </Stack.Navigator>
 )

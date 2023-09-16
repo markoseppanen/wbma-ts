@@ -4,6 +4,7 @@ import { RouteProp } from '@react-navigation/native'
 import { RootStackParamList } from '../navigators/Navigator'
 import { useState } from 'react'
 import { mediaUrl } from '../utils/Urls'
+import { COLORS } from '../styles/colors'
 
 type SingleRouteProp = RouteProp<RootStackParamList, 'Single'>
 
@@ -19,12 +20,11 @@ export const Single = ({ route }: SingleProps) => {
     setIsLoading(false)
   }
 
-  console.log(mediaUrl)
-  console.log(`${mediaUrl}/${singleMedia.filename}`)
-
   return (
     <SafeAreaView style={containerStyle.container}>
-      {isLoading && <ActivityIndicator size="large" color="#0000ff" />}
+      {isLoading && (
+        <ActivityIndicator size="large" color={COLORS.accentColor1} />
+      )}
       <Image
         source={{ uri: `${mediaUrl}/${singleMedia.filename}` }}
         onLoad={handleImageLoad}
