@@ -1,4 +1,4 @@
-export interface MediaItem {
+export type MediaItem = {
   file_id: number
   filename: string
   filesize: number
@@ -10,7 +10,7 @@ export interface MediaItem {
   time_added: string
 }
 
-export interface MediaFile {
+export type MediaFile = {
   file_id: number
   filename: string
   filesize: number

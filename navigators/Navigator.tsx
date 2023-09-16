@@ -6,9 +6,20 @@ import { Home } from '../views/Home'
 import { Profile } from '../views/Profile'
 import { NavigatorStyle } from '../styles/navigatorStyle'
 import { Single } from '../views/Single'
+import { MediaFile } from '../types/Media'
 
-const Stack = createNativeStackNavigator()
-const Tab = createBottomTabNavigator()
+export type RootStackParamList = {
+  Tabs: undefined
+  Single: { singleMedia: MediaFile }
+}
+
+export type BottamTabParamList = {
+  Home: undefined
+  Profile: undefined
+}
+
+const Stack = createNativeStackNavigator<RootStackParamList>()
+const Tab = createBottomTabNavigator<BottamTabParamList>()
 
 const TabScreen = () => (
   <Tab.Navigator>

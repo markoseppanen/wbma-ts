@@ -1,7 +1,6 @@
-import { MediaFile, MediaItem } from "../interfaces/Media"
+import { apiBaseUrl as url } from '../utils/Urls'
+import { MediaFile, MediaItem } from "../types/Media"
 import { useEffect, useState } from "react"
-
-const url = 'http://media.mw.metropolia.fi/wbma'
 
 export const useLoadMedia = () => {
   
