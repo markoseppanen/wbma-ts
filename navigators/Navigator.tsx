@@ -3,14 +3,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 
 import { Home } from '../views/Home'
+import { Login } from '../views/Login'
 import { Profile } from '../views/Profile'
-import { NavigatorStyle } from '../styles/navigatorStyle'
+
 import { Single } from '../views/Single'
+
+import { NavigatorStyle } from '../styles/navigatorStyle'
 import { MediaFile } from '../types/Media'
+import { useContext } from 'react'
+import { MainContext } from '../contexts/MainContext'
 
 export type RootStackParamList = {
   Tabs: undefined
   Single: { singleMedia: MediaFile }
+  Login: undefined
 }
 
 export type BottamTabParamList = {
@@ -28,16 +34,29 @@ const TabScreen = () => (
   </Tab.Navigator>
 )
 
-const StackScreen = () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="Tabs"
-      component={TabScreen}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen name="Single" component={Single} />
-  </Stack.Navigator>
-)
+const StackScreen = () => {
+  const { isLoggedIn } = useContext(MainContext)
+  return (
+    <Stack.Navigator>
+      {isLoggedIn ? (
+        <>
+          <Stack.Screen
+            name="Tabs"
+            component={TabScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="Single" component={Single} />
+        </>
+      ) : (
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+      )}
+    </Stack.Navigator>
+  )
+}
 
 export const Navigator = () => {
   return (

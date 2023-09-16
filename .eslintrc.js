@@ -27,6 +27,5 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react-native/no-unused-styles': 2,
-    '@typescript-eslint/no-explicit-any': 2,
   },
 }
