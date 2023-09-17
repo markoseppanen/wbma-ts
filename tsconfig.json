@@ -4,5 +4,6 @@
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "strict": true
-  }
+  },
+  "include": ["**/*.ts","**/*.tsx"]
 }
